@@ -1,0 +1,33 @@
+<a class='btn btn-default' href="create-shopping-list">Create shopping list</a>
+<hr>
+<ul class="list-groupt" *ngIf="lists">
+    <li class="list-group-item">My Shopping Lists</li>
+    <li class="list-group-item" *ngFor="let list of lists">
+        <div class="row">
+            <div class="col-sm-10">
+                <a href="shopping-list-details/{{list.id}}" class="btn">{{list.name}}</a>
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-danger pull-right" (click)="deleteList(list.id)">Delete</button>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<ul class="list-groupt" *ngIf="lists">
+    <li class="list-group-item">My Shoppings</li>
+    <li class="list-group-item" *ngFor="let item of shoppingItems">
+        <div class="row">
+            <div class="col-sm-4">
+                <strong>{{item.title}}</strong>
+            </div>
+            <div class="col-sm-4">
+                <span class="label label-info">{{item.price}}</span>
+            </div>
+            <div class="col-sm-4 text-info">
+                {{item.description}}
+            </div>
+        </div>
+    </li>
+    Sum: {{totalPaid}}
+</ul>

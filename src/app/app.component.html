@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Shopping list app</h1> 
+    <p>A great way to keep track of your shoppings</p>
+    <p>Add others to your shopping list</p> 
+    <p>Get the analytics</p>
+  </div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="home">Shopping Assistant</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li *ngIf="login" class="active"><a href="home">Home</a></li>
+        <li *ngIf="!login"><a href="signup">Signup</a></li>
+        <li *ngIf="!login" ><a href="login">Login</a></li>
+        <li *ngIf="login"><a class="btn btn-default" (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
